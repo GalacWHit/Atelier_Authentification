@@ -30,8 +30,7 @@ if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !==
 session_start();
 ?>
 
-// Si les identifiants sont corrects
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
