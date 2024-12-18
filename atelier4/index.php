@@ -2,7 +2,7 @@
 // Liste des utilisateurs et mots de passe
 $users = [
     'admin' => 'secret',
-    'user' => 'utilisateur',
+    'user' => '1234',
 ];
 
 // Gérer la déconnexion
@@ -64,10 +64,14 @@ $is_admin = $username === 'admin';
         <p>En tant qu'utilisateur standard, vous avez un accès limité à cette page.</p>
         <p>Contactez l'administrateur pour obtenir plus d'accès.</p>
     <?php endif; ?>
-    
+
     <!-- Lien pour se déconnecter -->
     <p><a href="?logout=true">Se déconnecter</a></p>
-    
+
+    <h2>Informations complémentaires</h2>
+    <p>Pour accéder à d'autres ressources, rendez-vous sur la page suivante :</p>
+    <p><a href="atelier4/index.php">Page index.php dans le répertoire atelier4</a></p>
+
     <!-- Explications sur les headers -->
     <h2>Informations sur les headers utilisés</h2>
     <ul>
@@ -76,7 +80,7 @@ $is_admin = $username === 'admin';
         <li><strong>401 Unauthorized :</strong> Code de réponse HTTP indiquant un accès refusé en cas d'authentification échouée.</li>
     </ul>
     <p>Pour visualiser les headers envoyés et reçus, utilisez les outils de développement de votre navigateur (onglet Réseau).</p>
-    
+
     <a href="../index.html">Retour à l'accueil</a>  
 </body>
 </html>
