@@ -3,7 +3,7 @@
 $valid_username = 'admin';
 $valid_password = 'secret';
 
-if ($_SERVER['role'] === 'admin') {
+if ($_SESSION['role'] === 'admin') {
     // Contenu réservé aux admins
     echo "<div>Section réservée aux admins</div>";
 } else {
