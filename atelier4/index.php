@@ -3,6 +3,16 @@
 $valid_username = 'admin';
 $valid_password = 'secret';
 
+
+ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Vérification simple des identifiants (à améliorer avec une base de données)
+    if ($username === 'admin' && $password === 'secret') {
+        // Stocker les informations utilisateur dans la session
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
 if ($_SESSION['role'] === 'admin') {
     // Contenu réservé aux admins
     echo "<div>Section réservée aux admins</div>";
