@@ -3,6 +3,13 @@
 $valid_username = 'admin';
 $valid_password = 'secret';
 
+if ($_SESSION['role'] === 'admin') {
+    // Contenu réservé aux admins
+    echo "<div>Section réservée aux admins</div>";
+} else {
+    echo "<div>Vous n'avez pas accès à cette section.</div>";
+}
+
 // Vérifier si l'utilisateur a envoyé des identifiants
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     // Envoyer un header HTTP pour demander les informations
@@ -21,14 +28,6 @@ if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !==
     exit;
 }
 session_start();
-
-// Vérifiez si l'utilisateur est admin
-if ($_SESSION['role'] === 'admin') {
-    // Contenu réservé aux admins
-    echo "<div>Section réservée aux admins</div>";
-} else {
-    echo "<div>Vous n'avez pas accès à cette section.</div>";
-}
 ?>
 
 // Si les identifiants sont corrects
