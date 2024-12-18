@@ -20,6 +20,16 @@ if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !==
     echo 'Nom d\'utilisateur ou mot de passe incorrect.';
     exit;
 }
+session_start();
+
+// Vérifiez si l'utilisateur est admin
+if ($_SESSION['role'] === 'admin') {
+    // Contenu réservé aux admins
+    echo "<div>Section réservée aux admins</div>";
+} else {
+    echo "<div>Vous n'avez pas accès à cette section.</div>";
+}
+?>
 
 // Si les identifiants sont corrects
 ?>
