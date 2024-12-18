@@ -2,7 +2,7 @@
 // Liste des utilisateurs et mots de passe
 $users = [
     'admin' => 'secret',
-    'user' => '1234',
+    'user' => 'utilisateur',
 ];
 
 // Gérer la déconnexion
